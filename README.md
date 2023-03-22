@@ -62,3 +62,18 @@ console.log(test_wallet)
 
 - Account info [response](https://js.xrpl.org/interfaces/AccountInfoResponse.html?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop)
  
+ 
+ ## Listen for events
+ ```
+ // Listen to ledger close events
+  client.request({
+    "command": "subscribe",
+    "streams": ["ledger"]
+  })
+  client.on("ledgerClosed", async (ledger) => {
+    console.log(`Ledger #${ledger.ledger_index} validated with ${ledger.txn_count} transactions!`)
+  })
+  ```
+  
+  - [Subscribe request](https://js.xrpl.org/interfaces/SubscribeRequest.html?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop)
+  - [Subscribe response](https://js.xrpl.org/interfaces/SubscribeResponse.html?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop)
