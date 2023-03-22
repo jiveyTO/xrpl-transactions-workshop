@@ -4,7 +4,7 @@
 [XRP Faucets](https://xrpl.org/xrp-testnet-faucet.html?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop)
 
 - First generate some test credentials on Testnet.
-- Check your balance on [Bithomp](https://bithomp.com/)
+- Check your balance on [Bithomp](https://bithomp.com/) or [XRPL Explorer](https://testnet.xrpl.org/?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop)
 
 
 - Open a terminal and go to Downloads
@@ -34,4 +34,9 @@ async function main() {
 }
 
 main()
+```
+
+- Get your test wallet balance
+```
+const test_wallet = xrpl.Wallet.fromSeed("<your seed here>") 
 ```
