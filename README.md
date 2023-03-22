@@ -19,4 +19,19 @@
 
 [XRPL JS](https://js.xrpl.org/?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop)
 
-- 
+- Connect to the ledger
+```
+async function main() {
+
+  // Define the network client
+  const client = new xrpl.Client("wss://s.altnet.rippletest.net:51233")
+  await client.connect()
+
+  // ... custom code goes here
+
+  // Disconnect when done (If you omit this, Node.js won't end the process)
+  client.disconnect()
+}
+
+main()
+```
