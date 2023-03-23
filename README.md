@@ -1,5 +1,9 @@
 # XRPL Transactions Workshop
 
+Useful doc sites
+[XRPL.org](https://xrpl.org?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop)
+[js.XRPL.org](https://js.xrpl.org?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop)
+
 ## Getting wallet credentials
 [XRP Faucets](https://xrpl.org/xrp-testnet-faucet.html?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop)
 
@@ -114,4 +118,9 @@ Some docs to look at
   console.log("Identifying hash:", signed.hash)
   console.log("Signed blob:", signed.tx_blob, "\n")
 ```
+
+The result of the signing operation is a transaction object containing a signature. Typically, XRP Ledger APIs expect a signed transaction to be the hexadecimal representation of the transaction's canonical binary format, called a "blob".
+
+- [The sign function](https://js.xrpl.org/classes/Wallet.html?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop#sign)
+
 
