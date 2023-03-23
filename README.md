@@ -95,7 +95,7 @@ View some of the docs
   const max_ledger = prepared.LastLedgerSequence
   console.log("Prepared transaction instructions:", prepared)
   console.log("Transaction cost:", xrpl.dropsToXrp(prepared.Fee), "XRP")
-  console.log("Transaction expires after ledger:", max_ledger)
+  console.log("Transaction expires after ledger:", max_ledger, "\n")
   ```
   
   - Let's put our addresses in the chat
@@ -112,6 +112,6 @@ Some docs to look at
   // Sign prepared instructions 
   const signed = test_wallet.sign(prepared)
   console.log("Identifying hash:", signed.hash)
-  console.log("Signed blob:", signed.tx_blob)
+  console.log("Signed blob:", signed.tx_blob, "\n")
 ```
 
