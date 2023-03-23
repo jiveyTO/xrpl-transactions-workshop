@@ -100,8 +100,18 @@ View some of the docs
   
   - Let's put our addresses in the chat
   - Now choose one address to send to and enter it in the destination field
+  - Note that technically you need more fields to complete the transaction but we use a special function called autofill to populate these fields for us.
   
 Some docs to look at 
 - [Transaction common fields](https://xrpl.org/transaction-common-fields.html?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop)   
 - [Transaction costs](https://xrpl.org/transaction-cost.html?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop)
 - [Other transaction types](https://xrpl.org/transaction-types.html?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop)
+
+
+```
+  // Sign prepared instructions 
+  const signed = test_wallet.sign(prepared)
+  console.log("Identifying hash:", signed.hash)
+  console.log("Signed blob:", signed.tx_blob)
+```
+
