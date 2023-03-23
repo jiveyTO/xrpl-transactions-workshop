@@ -140,6 +140,8 @@ In a few seconds you should see the `tesSUCCESS` in the `TransactionResult` fiel
 ## Using XUMM
 
 - Download the [XUMM app](https://xumm.app/). You will need it for the NFT workshop and during the hackathon to get you POAP.
+- Import an account using a seed you just generated
+- Switch to Testnet
 - Register a new app on the [developer dashboard](https://apps.xumm.dev/).
 - In your terminal run `npm install xumm-sdk`
 - Touch a new file `xumm-test.js`
