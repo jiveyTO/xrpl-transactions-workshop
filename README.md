@@ -137,3 +137,37 @@ In a few seconds you should see the `tesSUCCESS` in the `TransactionResult` fiel
 - [Submit and wait function](https://js.xrpl.org/classes/Client.html?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop#submitAndWait)
 
 
+## Using XUMM
+
+- Download the [XUMM app](https://xumm.app/). You will need it for the NFT workshop and during the hackathon to get you POAP.
+- Register a new app on the [developer dashboard](https://apps.xumm.dev/).
+- In your terminal run `npm install xumm-sdk`
+- Touch a new file `xumm-test.js`
+
+```
+const {XummSdk} = require('xumm-sdk')
+const Sdk = new XummSdk(<your xumm key>, <your xumm key>)
+
+const main = async () => {
+  const appInfo = await Sdk.ping()
+  console.log(appInfo.application.name)
+
+  const request = {
+    "TransactionType": "Payment",
+    "Destination": "<address to send to>",
+    "Amount": "<an amount of xrp>",
+    "Memos": [
+      {
+        "Memo": {
+          "MemoData": "4d6f7267616e20537461746520526f636b7321"
+        }
+      }
+    ]
+  }
+
+  const payload = await Sdk.payload.create(request, true)
+  console.log(payload)
+}
+
+main()
+```
