@@ -3,7 +3,8 @@
 ## Getting wallet credentials
 [XRP Faucets](https://xrpl.org/xrp-testnet-faucet.html?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop)
 
-- First generate some test credentials on Testnet.
+- First generate some test credentials on Testnet
+- Copy and paste your seed and address somewhere, we'll need it later
 - Check your balance on [Bithomp](https://bithomp.com/) or [XRPL Explorer](https://testnet.xrpl.org/?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop)
 
 
@@ -80,3 +81,23 @@ console.log(test_wallet)
 
 
 - Comment out client.disconnect() to keep listening
+
+
+## Send XRP to each other
+```
+  // Prepare transaction -------------------------------------------------------
+  const prepared = await client.autofill({
+    "TransactionType": "Payment",
+    "Account": test_wallet.address,
+    "Amount": xrpl.xrpToDrops("22"),
+    "Destination": "<get your classmates address>"
+  })
+  const max_ledger = prepared.LastLedgerSequence
+  console.log("Prepared transaction instructions:", prepared)
+  console.log("Transaction cost:", xrpl.dropsToXrp(prepared.Fee), "XRP")
+  console.log("Transaction expires after ledger:", max_ledger)
+  ```
+  
+  - Let's put our addresses in the chat
+  - Now choose one address to send to and enter it in the destination field
+  - 
