@@ -94,7 +94,7 @@ View some of the docs
   const prepared = await client.autofill({
     "TransactionType": "Payment",
     "Account": test_wallet.address,
-    "Amount": xrpl.xrpToDrops("22"),
+    "Amount": xrpl.xrpToDrops("<put a random amound to send, notice the function converts to drops for you>"),
     "Destination": "<get your classmates address>"
   })
   const max_ledger = prepared.LastLedgerSequence
@@ -128,6 +128,12 @@ The result of the signing operation is a transaction object containing a signatu
   // Submit signed blob
   const tx = await client.submitAndWait(signed.tx_blob)
   console.log("tx = " + JSON.stringify(tx, null, 3))
+  console.log("Transaction result:", tx.result.meta.TransactionResult)
+  console.log("Balance changes:", JSON.stringify(xrpl.getBalanceChanges(tx.result.meta), null, 2))  
 ```
 
+In a few seconds you should see the `tesSUCCESS` in the `TransactionResult` field
+
 - [Submit and wait function](https://js.xrpl.org/classes/Client.html?utm_source=workshop&utm_medium=jason-morgan-state-mar-23&utm_campaign=dev-advocacy&utm_term=xrpl-transactions-workshop&utm_content=xrpl-transactions-workshop#submitAndWait)
+
+
